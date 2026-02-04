@@ -9,4 +9,5 @@ const beverageSchema = new mongoose.Schema({
 
 });
 
+// named default 
 export default mongoose.model("Drinks", beverageSchema);
