@@ -16,6 +16,7 @@ app.use(logReq);
 
 // routes 
 
+
 // global err handling middleware 
 app.use(globalErr);
 
