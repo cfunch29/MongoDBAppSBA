@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { logReq, globalErr } from "./middleware/middlewares.js";
 import connectDB from "./db/connection.js";
+import drinkRoutes from "./routes/drinkRoutes.js";
 
 // setups 
 dotenv.config();
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use(logReq);
 
 // routes 
-
+app.use("api/drink", drinkRoutes);
 
 // global err handling middleware 
 app.use(globalErr);
