@@ -9,5 +9,11 @@ const beverageSchema = new mongoose.Schema({
 
 });
 
+beverageSchema.index({ category: 1 });
+
+beverageSchema.methods.getCategory = function (cb) {
+    return mongoose.model("Drinks").find({ category: this.category }, cb);
+};
+
 // named default 
 export default mongoose.model("Drinks", beverageSchema);
